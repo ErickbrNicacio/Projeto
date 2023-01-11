@@ -1,0 +1,25 @@
+{
+    "name": "erickadriano/projetin",
+    "description": "Projeto do curso de php 7 da Hcode",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+           "erickadriano\\": "vendor\\hcodebr\\php-classes\\src\\DB"
+        }
+    },
+    "authors": [
+        {
+            "name": "ErickbrNicacio",
+            "email": "erick.adriano@madeiramadeira.com.br"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+        "monolog/monolog":"1.0.*",
+        "phpmailer/phpmailer":"5.2.22",
+        "slim/slim":"2.0",
+        "rain/raintpl":"3.0.0"
+
+    }
+}
