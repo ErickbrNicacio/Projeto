@@ -2,8 +2,6 @@
 
 namespace Hcode\Model;
 
-require_once("/vendor/hcodebr/src/DB/sql.php");
-require_once("/vendor/hcodebr/src/Model.php");
 
 use Hcode\DB\Sql;
 use Hcode\Model;
@@ -26,7 +24,7 @@ class User extends Model{
 
         $data = $results[0]; 
         
-        if($password_verify($password, $data["despassword"]) === true){
+        if(password_verify($password, $data["despassword"]) === true){
 
             $user = new User();
 
@@ -58,4 +56,13 @@ class User extends Model{
         $_SESSION[User::SESSION] = NULL;
 
     }
+
+    public static function listAll(){
+
+        $sql = new Sql();
+
+        $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY b.despers");
+
+    }
+
 }
